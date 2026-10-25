@@ -1,0 +1,190 @@
+/* =========================================================
+   DOPPIO — style.css (shared, every page)
+   a coffee house where everything comes in twos
+   concept, design & code by ghostly.grl ♥
+   ========================================================= */
+
+:root {
+  --paper: #eef2c9;        /* matcha milk */
+  --paper-2: #e2e8b2;
+  --white: #f9faec;
+  --ink: #2f3d12;          /* olive, for every giant word */
+  --mute: #7b874f;
+  --line: #cdd69a;
+  --echo: #dbe3a6;         /* the faded giant type */
+  --hot: #ec8aa0;          /* the one loud colour: saka pink */
+  --hot-2: #d9667f;
+  --olive-2: #46561d;
+
+  --f-disp: 'Bricolage Grotesque', 'Arial Narrow', sans-serif;
+  --f-serif: 'Instrument Serif', Georgia, serif;
+  --f-mono: 'DM Mono', ui-monospace, monospace;
+  --f-hand: 'Caveat', 'Bradley Hand', cursive;
+  --f-sig: 'Pinyon Script', cursive;
+
+  --gut: clamp(16px, 3vw, 44px);
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+/* konami: the night shift. same café, after closing */
+html.night {
+  --paper: #1c240b; --paper-2: #243010; --white: #222c0e; --ink: #e9efc4;
+  --mute: #9aa56b; --line: #34421a; --echo: #2b3711; --hot: #f39bb0; --hot-2: #e27a93;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-disp); font-size: 16px; line-height: 1.45;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  transition: background-color .6s var(--ease), color .6s var(--ease);
+}
+body.is-loading { overflow: hidden; }
+img, svg, canvas { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; color: inherit; background: none; border: 0; }
+button { cursor: pointer; }
+::selection { background: var(--hot); color: var(--ink); }
+
+.mono { font-family: var(--f-mono); text-transform: uppercase; letter-spacing: .04em; }
+.serif { font-family: var(--f-serif); font-weight: 400; }
+.serif i, i.serif { font-style: italic; }
+.hand { font-family: var(--f-hand); }
+.kicker { font-family: var(--f-mono); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--mute); }
+.kicker b { color: var(--hot-2); font-weight: 500; }
+[data-fit] { display: inline-block; width: max-content; white-space: nowrap; line-height: .82; }
+.c { display: inline-block; will-change: transform; }
+.line-mask { display: block; overflow: hidden; }
+
+/* ---------- ticker (address strip, like a bakery receipt) ---------- */
+.ticker {
+  position: relative; z-index: 60; overflow: hidden; background: var(--ink); color: var(--paper);
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  height: 26px; display: flex; align-items: center;
+}
+.ticker__run { display: flex; gap: 0; white-space: nowrap; will-change: transform; animation: tick 40s linear infinite; }
+.ticker__run span { padding: 0 22px; }
+.ticker__run span::before { content: '●'; color: var(--hot); margin-right: 22px; font-size: 8px; vertical-align: 2px; }
+html.night .ticker { background: #000; }
+@keyframes tick { to { transform: translateX(-50%); } }
+
+/* ---------- header: pills left, logo centre, pills right ---------- */
+.hdr {
+  position: sticky; top: 0; z-index: 50; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  padding: 14px var(--gut); transition: transform .5s var(--ease), background-color .4s;
+}
+.hdr.is-scrolled { background: color-mix(in srgb, var(--paper) 88%, transparent); }
+.hdr.is-hidden { transform: translateY(-110%); }
+.hdr__pills { display: flex; gap: 8px; }
+.hdr__pills--r { justify-content: flex-end; }
+.pill {
+  display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 14px; border: 1px solid var(--ink); border-radius: 99px;
+  font-size: 13px; font-weight: 500; line-height: 1; white-space: nowrap; transition: background-color .25s, color .25s;
+}
+.pill:hover, .pill.is-on { background: var(--ink); color: var(--paper); }
+.pill--green { background: var(--hot); border-color: var(--hot); color: var(--ink); }
+.pill--green:hover { background: var(--ink); border-color: var(--ink); }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; letter-spacing: -.02em; }
+.logo__badge { width: 34px; height: 34px; flex: none; }
+.logo__badge circle { transition: transform .6s var(--ease); transform-origin: center; transform-box: fill-box; }
+.logo:hover .logo__badge .b1 { transform: translateX(-2px); }
+.logo:hover .logo__badge .b2 { transform: translateX(2px); }
+
+/* ---------- loader: a glass fills, shot 01, shot 02 ---------- */
+.loader {
+  position: fixed; inset: 0; z-index: 200; background: var(--hot); color: var(--ink);
+  display: grid; place-items: center; align-content: center; gap: 18px;
+}
+.ld-glass { width: 110px; height: 140px; overflow: visible; }
+.ld-glass .outline { fill: none; stroke: var(--ink); stroke-width: 2.5; }
+.ld-txt { font-size: 12px; }
+.ld-word { position: absolute; bottom: 4vh; left: 0; right: 0; text-align: center; font-weight: 800; font-size: 17vw; line-height: .8; letter-spacing: -.04em; color: var(--hot-2); }
+html:not(.motion) .loader { display: none; }
+
+/* ---------- cursor: a coffee bean with a label ---------- */
+.cursor { position: fixed; left: 0; top: 0; z-index: 300; pointer-events: none; opacity: 0; transition: opacity .3s; }
+.cursor.is-on { opacity: 1; }
+.cursor__bean {
+  position: absolute; left: -7px; top: -9px; width: 14px; height: 18px; border-radius: 50%; background: var(--ink);
+  transform: rotate(28deg); transition: transform .35s var(--ease), background-color .3s;
+}
+.cursor__bean::after {
+  content: ''; position: absolute; left: 50%; top: 15%; bottom: 15%; width: 3px; margin-left: -1.5px;
+  border-radius: 50%; border-left: 1.5px solid var(--paper); transform: rotate(8deg);
+}
+.cursor.is-hover .cursor__bean { transform: rotate(28deg) scale(1.6); background: var(--hot); }
+.cursor.is-down .cursor__bean { transform: rotate(60deg) scale(.8); }
+.cursor__label {
+  position: absolute; left: 16px; top: 12px; white-space: nowrap; padding: 5px 10px; border-radius: 99px;
+  background: var(--hot); color: var(--ink); font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em;
+  opacity: 0; transform: translateY(4px) scale(.9); transform-origin: left top; transition: opacity .25s, transform .3s var(--ease);
+}
+.cursor.has-label .cursor__label { opacity: 1; transform: none; }
+html.has-cursor, html.has-cursor a, html.has-cursor button, html.has-cursor [data-cursor] { cursor: none; }
+html.has-cursor input { cursor: text; }
+
+/* ---------- toast: a receipt that slides out of the till ---------- */
+.toast {
+  position: fixed; left: 50%; bottom: 24px; z-index: 250; max-width: min(92vw, 440px); padding: 14px 18px 16px;
+  background: var(--white); color: var(--ink); border: 1px solid var(--line); border-radius: 4px;
+  font-family: var(--f-mono); font-size: 12px; line-height: 1.5; text-transform: uppercase; letter-spacing: .03em;
+  box-shadow: 0 14px 40px rgba(31, 20, 13, .16);
+  transform: translate(-50%, 140%); transition: transform .55s var(--ease); pointer-events: none;
+}
+.toast::before { content: 'DOPPIO · receipt'; display: block; margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px dashed var(--line); color: var(--hot-2); font-size: 10px; }
+.toast.is-on { transform: translate(-50%, 0); }
+
+/* ---------- image slots ---------- */
+.slot {
+  position: relative; overflow: hidden; aspect-ratio: var(--ratio, auto);
+  background: color-mix(in srgb, var(--paper-2) 70%, transparent);
+  outline: 1.5px dashed color-mix(in srgb, var(--mute) 70%, transparent); outline-offset: -1.5px;
+}
+.slot.has-img { outline: 0; background: none; }
+.slot > img { width: 100%; height: 100%; object-fit: cover; }
+.slot--cut > img { object-fit: contain; }
+.slot--round { border-radius: 50%; }
+.slot-label {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  padding: 10px; text-align: center; font-family: var(--f-mono); font-size: 10.5px; line-height: 1.3; letter-spacing: .03em; color: var(--mute);
+}
+.slot-label small { font-family: var(--f-serif); font-style: italic; font-size: 13px; letter-spacing: 0; text-transform: none; }
+.slot.has-img .slot-label { display: none; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 26px; border-radius: 99px;
+  background: var(--hot); color: var(--ink); font-weight: 600; font-size: 16px; white-space: nowrap;
+  transition: background-color .3s;
+}
+.btn:hover { background: var(--ink); }
+.btn--line { background: none; color: var(--ink); border: 1px solid var(--ink); }
+.btn--line:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- footer ---------- */
+.ft { position: relative; padding: clamp(60px, 10vw, 130px) var(--gut) 28px; background: var(--ink); color: var(--paper); overflow: hidden; }
+.ft__word { display: block; font-weight: 800; letter-spacing: -.045em; color: var(--paper); }
+.ft__script { font-family: var(--f-hand); font-size: clamp(34px, 5vw, 64px); line-height: 1; transform: rotate(-4deg); margin: -.3em 0 0 .2em; color: var(--hot); }
+.ft__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: clamp(50px, 7vw, 90px); padding-top: 24px; border-top: 1px solid rgba(243, 238, 227, .28); }
+.ft__k { font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; opacity: .6; margin-bottom: 12px; }
+.ft__links { display: flex; flex-direction: column; gap: 4px; font-size: 17px; }
+.ft__links a:hover { font-family: var(--f-serif); font-style: italic; }
+.ft__clock { font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: -.03em; }
+.ft__bottom { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 60px; font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; opacity: .85; }
+.ft-sign { text-transform: none; letter-spacing: 0; font-family: var(--f-disp); font-size: 13px; }
+.ft-sign .sig { font-family: var(--f-sig); font-size: 24px; vertical-align: -4px; margin: 0 2px; }
+html.night .ft { background: #11170a; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .hdr { grid-template-columns: auto 1fr; }
+  .hdr__pills--l { display: none; }
+  .hdr__pills--r .pill:not(.pill--green) { display: none; }
+  .ft__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}

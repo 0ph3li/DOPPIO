@@ -1,0 +1,108 @@
+/* =========================================================
+   DOPPIO — sospeso.css (the second cup)
+   concept, design & code by ghostly.grl ♥
+   ========================================================= */
+
+/* halftone sources: the photo is read, never shown. its label says where it goes */
+.ht-src { position: absolute; z-index: 3; right: var(--gut); bottom: 14px; width: 250px; height: 46px; background: none; outline-color: color-mix(in srgb, var(--ink) 45%, transparent); }
+.ht-src > img { display: none; }
+.ht-src .slot-label { flex-direction: row; gap: 6px; font-size: 9px; color: var(--ink); }
+.ht-src .slot-label small { display: none; }
+.ht-src.has-img { display: none; }
+
+/* ---------- 1 · hero (ref: organic dairy halftone hero) ---------- */
+.sh { position: relative; min-height: calc(100vh - 90px); background: var(--hot); overflow: hidden; display: flex; align-items: center; }
+.sh__dots { position: absolute; top: 0; right: 0; bottom: 0; width: 64%; height: 100%; }
+.sh__copy { position: relative; z-index: 2; max-width: 500px; padding: 60px var(--gut); }
+.sh .kicker { color: var(--ink); opacity: .7; }
+.sh .kicker b { color: var(--ink); }
+.sh__t { margin-top: 18px; font-weight: 700; font-size: clamp(56px, 7.4vw, 128px); line-height: .88; letter-spacing: -.05em; }
+.sh__p { margin-top: 22px; max-width: 400px; font-size: 15px; line-height: 1.45; }
+.sh__count { display: flex; align-items: center; gap: 14px; margin-top: 34px; }
+.sh__count b { font-weight: 800; font-variation-settings: 'wdth' 78; font-size: clamp(54px, 5.4vw, 84px); line-height: .9; letter-spacing: -.04em; }
+.sh__count span { font-size: 11px; line-height: 1.4; }
+
+/* ---------- 2 · how it works (ref: organic dairy product row) ---------- */
+.how { position: relative; padding: clamp(80px, 10vw, 140px) var(--gut) clamp(60px, 8vw, 110px); background: var(--white); text-align: center; }
+.how__t { font-weight: 600; font-size: clamp(30px, 3.4vw, 52px); letter-spacing: -.03em; }
+.how__row { position: relative; display: flex; justify-content: center; align-items: center; gap: 2.2vw; margin-top: clamp(40px, 5vw, 70px); }
+.how__path { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.how__path path { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 6 7; }
+.how__runner { position: absolute; z-index: 4; left: 0; top: 0; width: 42px; margin: -24px 0 0 -21px; pointer-events: none; will-change: transform; }
+.how__runner svg { width: 100%; fill: var(--hot); stroke: var(--ink); stroke-width: 2.4; stroke-linejoin: round; overflow: visible; }
+.step { width: clamp(180px, 21vw, 310px); will-change: transform; }
+.step--big { width: clamp(220px, 28vw, 410px); }
+.step__img { aspect-ratio: 4 / 5; border-radius: 14px; }
+.step--big .step__img { aspect-ratio: 3 / 4; }
+.step figcaption { margin-top: 14px; font-size: 15px; }
+.step figcaption b { font-weight: 500; font-size: 11px; color: var(--hot-2); margin-right: 6px; }
+.how__s { margin-top: 26px; font-size: 13px; color: var(--mute); }
+
+/* ---------- 3 · the wall ---------- */
+.wall { position: relative; padding: clamp(80px, 10vw, 140px) var(--gut); background: var(--paper-2); overflow: hidden; }
+.wall__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
+.wall__t { margin-top: 10px; font-weight: 800; font-size: clamp(64px, 11vw, 190px); line-height: .82; letter-spacing: -.05em; }
+.wall__t i { font-weight: 400; color: var(--hot-2); }
+.leave { display: grid; grid-template-columns: repeat(3, minmax(130px, 1fr)) auto; gap: 18px; align-items: end; max-width: 760px; }
+.leave label { display: flex; flex-direction: column; gap: 6px; }
+.leave span { font-size: 10px; color: var(--mute); }
+.leave input, .leave select { height: 42px; border: 0; border-bottom: 2px solid var(--ink); background: none; font: inherit; font-size: 16px; color: var(--ink); outline: 0; border-radius: 0; }
+.leave input:focus, .leave select:focus { border-color: var(--hot-2); }
+.leave input::placeholder { color: var(--mute); }
+.wall__board { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 34px 20px; margin-top: clamp(40px, 5vw, 70px); }
+.tk {
+  position: relative; padding: 24px 16px 30px; background: #fff; color: #2b2b2b; font-family: var(--f-mono); font-size: 10.5px; line-height: 1.5; text-transform: uppercase;
+  transform: rotate(var(--r, 0deg)); transform-origin: 50% 0; cursor: pointer; will-change: transform;
+  -webkit-mask: radial-gradient(circle at 6px 100%, transparent 5px, #000 5.5px) 0 0 / 12px 100% repeat-x;
+          mask: radial-gradient(circle at 6px 100%, transparent 5px, #000 5.5px) 0 0 / 12px 100% repeat-x;
+}
+.tk__pin { position: absolute; left: 50%; top: 8px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--hot); box-shadow: inset -2px -2px 0 var(--hot-2); }
+.tk__top { display: flex; justify-content: space-between; color: #888; font-size: 9.5px; margin-top: 6px; }
+.tk__what { margin: 12px 0 10px; padding: 10px 0; border-top: 1px dashed #bbb; border-bottom: 1px dashed #bbb; font-family: var(--f-disp); font-weight: 700; font-size: 20px; line-height: 1.05; letter-spacing: -.02em; text-transform: none; color: var(--ink); }
+.tk__row { display: flex; justify-content: space-between; gap: 10px; }
+.tk__row span:last-child { text-align: right; color: var(--ink); }
+.tk__for { margin-top: 10px; font-family: var(--f-hand); font-size: 22px; line-height: 1; text-transform: none; color: var(--hot-2); transform: rotate(-3deg); }
+.tk--mine .tk__pin { background: var(--ink); box-shadow: none; }
+.tk--mine::after { content: 'yours ♥'; position: absolute; right: 10px; top: 6px; font-size: 9px; color: var(--hot-2); }
+.wall__hint { margin-top: 40px; text-align: center; font-size: 26px; color: var(--hot-2); transform: rotate(-2deg); }
+
+/* ---------- 4 · the story (ref: organic dairy halftone branch + card) ---------- */
+.story { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: flex-end; padding: 80px var(--gut); background: var(--white); overflow: hidden; }
+.story__dots { position: absolute; left: 0; top: 0; bottom: 0; width: 58%; height: 100%; }
+.story .ht-src { right: auto; left: var(--gut); }
+.story__card { position: relative; z-index: 2; width: min(660px, 58vw); padding: clamp(28px, 3vw, 46px); border-radius: 16px; background: color-mix(in srgb, var(--hot) 22%, var(--white)); will-change: transform; }
+.story__t { font-weight: 700; font-size: clamp(32px, 3vw, 46px); letter-spacing: -.03em; }
+.story__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 18px; font-size: 13.5px; line-height: 1.5; }
+
+/* ---------- 5 · what a second cup does (ref: organic dairy carton + arrows) ---------- */
+.does { position: relative; padding: clamp(80px, 9vw, 130px) var(--gut) clamp(90px, 10vw, 150px); background: var(--white); text-align: center; overflow: hidden; }
+.does__t { font-weight: 600; font-size: clamp(30px, 3.4vw, 52px); letter-spacing: -.03em; }
+.does__stage { position: relative; width: min(920px, 100%); height: min(76vh, 680px); margin: clamp(40px, 5vw, 70px) auto 0; }
+.does__arrows { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.does__arrows path { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.does__cup { position: absolute; left: 50%; top: 50%; width: clamp(150px, 18vw, 240px); transform: translate(-50%, -50%); }
+.does__cup svg { width: 100%; overflow: visible; }
+.cup__body, .cup__lid { fill: var(--white); stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
+.cup__sleeve { fill: var(--hot); }
+.cup__logo { font-family: var(--f-disp); font-weight: 800; font-size: 26px; letter-spacing: -.02em; fill: var(--ink); }
+.does__name { position: absolute; left: 14%; right: 14%; top: 26%; font-size: clamp(20px, 2.2vw, 30px); font-weight: 700; transform: rotate(-6deg); white-space: nowrap; }
+.lab { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%); font-weight: 600; font-size: clamp(14px, 1.4vw, 19px); line-height: 1.15; letter-spacing: -.01em; white-space: nowrap; cursor: default; will-change: transform; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .sh { flex-direction: column; align-items: stretch; }
+  .sh__dots { position: relative; width: 100%; height: 70vw; order: 2; }
+  .sh__copy { padding-bottom: 20px; }
+  .ht-src { width: 200px; }
+  .how__row { flex-direction: column; gap: 30px; }
+  .how__path, .how__runner { display: none; }
+  .step, .step--big { width: 78vw; }
+  .leave { grid-template-columns: 1fr 1fr; }
+  .wall__board { grid-template-columns: 1fr 1fr; gap: 24px 12px; }
+  .story { flex-direction: column; justify-content: flex-start; align-items: stretch; padding-top: 0; }
+  .story__dots { position: relative; width: calc(100% + var(--gut) * 2); margin: 0 calc(var(--gut) * -1); height: 80vw; }
+  .story__card { width: auto; margin-top: -40px; }
+  .story__cols { grid-template-columns: 1fr; }
+  .does__stage { height: 120vw; }
+  .lab { font-size: 13px; }
+}

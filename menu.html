@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>DOPPIO — menu / prices</title>
+  <meta name="description" content="The DOPPIO menu: four boards, three sizes, every order comes in twos. Coffee, matcha, cold and sweet." />
+  <meta name="theme-color" content="#eef2c9" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Caveat:wght@500;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20261025-18" />
+  <link rel="stylesheet" href="css/menu.css?v=20261025-18" />
+</head>
+<body class="is-loading" data-page="menu">
+
+  <!-- ================= LOADER ================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="ld-glass" viewBox="0 0 110 140">
+      <defs><clipPath id="ldClip"><path d="M10 6 L100 6 L90 134 L20 134 Z" /></clipPath></defs>
+      <g clip-path="url(#ldClip)">
+        <g id="ldFill">
+          <rect x="0" y="0" width="110" height="140" fill="#2f3d12" />
+          <rect x="0" y="0" width="110" height="12" fill="#c9d77a" />
+        </g>
+      </g>
+      <path class="outline" d="M10 6 L100 6 L90 134 L20 134 Z" />
+    </svg>
+    <p class="ld-txt mono">reading the menu <b id="ldShot">01</b> / 02</p>
+    <p class="ld-word">MENU</p>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__bean"></i><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ================= TICKER + HEADER ================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__run">
+      <span>every order comes in twos</span><span>prices too</span><span>sizes: doppio, doppio doppio, please stop</span><span>oat milk is free</span><span>decaf on request, with a look</span>
+      <span>every order comes in twos</span><span>prices too</span><span>sizes: doppio, doppio doppio, please stop</span><span>oat milk is free</span><span>decaf on request, with a look</span>
+    </div>
+  </div>
+  <header class="hdr" id="hdr">
+    <nav class="hdr__pills hdr__pills--l" aria-label="Main">
+      <a href="menu.html" class="pill is-on" aria-current="page">menu / prices</a>
+      <a href="sospeso.html" class="pill">the second cup</a>
+    </nav>
+    <a href="index.html" class="logo" aria-label="DOPPIO home">
+      <svg class="logo__badge" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" style="fill:var(--hot)" /><circle class="b1" cx="14.5" cy="20" r="7" fill="none" style="stroke:var(--ink)" stroke-width="2.4" /><circle class="b2" cx="25.5" cy="20" r="7" fill="none" style="stroke:var(--ink)" stroke-width="2.4" /></svg>
+      DOPPIO
+    </a>
+    <nav class="hdr__pills hdr__pills--r" aria-label="More">
+      <a href="room.html" class="pill">the room</a>
+      <a href="about.html" class="pill">about</a>
+      <a href="#tray" class="pill pill--green tray-chip" id="trayChip" data-jump data-mag data-cursor="your tray">tray <b id="trayN">0</b></a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 1 · FOUR POSTERS (ref: crafted dose 2×2 posters) ========== -->
+    <section class="posters" id="posters">
+      <div class="posters__head">
+        <p class="kicker" data-scramble>(menu) four boards — <b>everything in twos</b></p>
+        <h1 class="posters__t">The menu, <i class="serif">twice.</i></h1>
+        <p class="posters__s mono">pick a board. prices don't come in twos. only the coffee does.</p>
+      </div>
+      <div class="posters__grid" id="posterGrid">
+        <a href="#coffee" class="poster poster--dose" data-jump data-cursor="coffee →">
+          <span class="poster__brand">Doppio<sup>®</sup></span><span class="poster__by mono">designed<br />by ghostly.grl</span>
+          <p class="poster__t">Double<br />dose<sup>©</sup></p>
+          <p class="poster__s">coffee with character. two shots, detail, and pure taste in every pour.</p>
+          <div class="poster__glass poster__glass--big slot slot--cut" data-img="img/HOME/front/amber.png" data-label="HOME/front/amber.png"></div>
+          <span class="poster__n mono">01 · coffee</span>
+        </a>
+        <a href="#matcha" class="poster poster--band" data-jump data-cursor="matcha →">
+          <span class="poster__brand">Doppio<sup>®</sup></span><span class="poster__by mono">designed<br />by ghostly.grl</span>
+          <p class="poster__t poster__t--top">Double</p>
+          <div class="poster__band"><i class="pb pb--l"></i><i class="pb pb--r"></i></div>
+          <div class="poster__glass slot slot--cut" data-img="img/HOME/front/berry.png" data-label="HOME/front/berry.png"></div>
+          <p class="poster__t poster__t--bot">Matcha</p>
+          <span class="poster__n mono">02 · matcha</span>
+        </a>
+        <a href="#cold" class="poster poster--band poster--olive" data-jump data-cursor="cold →">
+          <span class="poster__brand">Doppio<sup>®</sup></span><span class="poster__by mono">designed<br />by ghostly.grl</span>
+          <p class="poster__t poster__t--top">Double</p>
+          <div class="poster__band"><i class="pb pb--l"></i><i class="pb pb--r"></i></div>
+          <div class="poster__glass slot slot--cut" data-img="img/HOME/front/orange.png" data-label="HOME/front/orange.png"></div>
+          <p class="poster__t poster__t--bot">Cold</p>
+          <span class="poster__n mono">03 · cold</span>
+        </a>
+        <a href="#sweet" class="poster poster--dose poster--sweet" data-jump data-cursor="sweet →">
+          <span class="poster__brand">Doppio<sup>®</sup></span><span class="poster__by mono">designed<br />by ghostly.grl</span>
+          <p class="poster__t">Double<br />sweet</p>
+          <p class="poster__s">baked at six, gone by ten. everything sweet comes in a pair.</p>
+          <div class="poster__glass poster__glass--big slot slot--cut" data-img="img/HOME/front/choc.png" data-label="HOME/front/choc.png"></div>
+          <span class="poster__n mono">04 · sweet</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== 2 · THE BOARDS (ref: petit chou product cards) + the size switch ========== -->
+    <section class="boards" id="boards">
+      <div class="sizebar" id="sizebar">
+        <p class="sizebar__k mono">size</p>
+        <div class="sizebar__seg" id="sizeSeg" role="radiogroup" aria-label="Size"></div>
+        <p class="sizebar__note hand" id="sizeNote">the normal one. still two shots.</p>
+      </div>
+      <div id="boardList"></div>
+    </section>
+
+    <!-- ========== 3 · THE TRAY: a receipt that prints ========== -->
+    <section class="tray" id="tray">
+      <div class="tray__pin">
+        <div class="tray__head">
+          <p class="kicker" data-scramble>(tray) the bill — <b>printed twice</b></p>
+          <h2 class="tray__t">your <i class="serif">tray</i></h2>
+          <p class="tray__s mono">everything you add comes as two. the third one is for a stranger, on us.</p>
+          <div class="tray__btns">
+            <button class="btn" id="trayOrder" data-mag data-cursor="two, please">order it all →</button>
+            <button class="btn btn--line" id="trayClear" data-mag data-cursor="start over">clear</button>
+          </div>
+        </div>
+        <div class="printer">
+          <div class="printer__top"><span class="mono">DOPPIO · till 02</span><i class="printer__led"></i></div>
+          <div class="printer__slot">
+            <div class="receipt" id="receipt">
+              <p class="rc__logo">DOPPIO</p>
+              <p class="rc__c">corso doppio 22, milano<br /><span data-clock>00:00</span> · table for two</p>
+              <div class="rc__lines" id="rcLines"></div>
+              <p class="rc__row rc__row--sos"><span>+1 sospeso, for a stranger</span><span>on us</span></p>
+              <p class="rc__row rc__row--tot"><span>total</span><span id="rcTot">€0.00</span></p>
+              <p class="rc__c">paid in full, twice the coffee</p>
+              <div class="rc__bar" aria-hidden="true"></div>
+              <p class="rc__thanks hand">see you twice ♥</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="ft">
+      <span class="ft__word" data-fit>DOPPIO</span>
+      <p class="ft__script">see you twice ♥</p>
+      <div class="ft__grid">
+        <div><p class="ft__k">the house</p><p class="ft__links"><a href="index.html">home</a><a href="menu.html">menu / prices</a><a href="sospeso.html">the second cup</a><a href="room.html">the room</a><a href="about.html">about</a></p></div>
+        <div><p class="ft__k">this page</p><p class="ft__links"><a href="#coffee" data-jump>coffee</a><a href="#matcha" data-jump>matcha</a><a href="#cold" data-jump>cold</a><a href="#sweet" data-jump>sweet</a><a href="#tray" data-jump>your tray</a></p></div>
+        <div><p class="ft__k">small print</p><p class="ft__links"><span>oat milk is free</span><span>decaf on request</span><span>singles on request, nicely, twice</span></p></div>
+        <div><p class="ft__k">milano, right now</p><p class="ft__clock" data-clock>00:00</p><p class="ft__links"><span id="machine">the machine is on.</span><a href="#top" data-jump>back to the posters ↑</a></p></div>
+      </div>
+      <div class="ft__bottom">
+        <span>© 2026 DOPPIO — a concept. prices are pretend, the coffee is not.</span>
+        <span class="ft-sign">concept, design &amp; code by <span class="sig">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/data.js?v=20261025-18"></script>
+  <script src="js/main.js?v=20261025-18"></script>
+  <script src="js/menu.js?v=20261025-18"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <   ☕     *
+-->
+</html>

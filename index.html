@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>DOPPIO — every coffee comes in twos</title>
+  <meta name="description" content="DOPPIO is a coffee house where everything comes double: two shots by default, your name spelled right, and a second cup left on the counter for whoever walks in next." />
+  <meta name="theme-color" content="#eef2c9" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Caveat:wght@500;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20261025-18" />
+  <link rel="stylesheet" href="css/home.css?v=20261025-18" />
+</head>
+<body class="is-loading" data-page="home">
+
+  <!-- ================= LOADER: a glass fills, shot 01, shot 02 ================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="ld-glass" viewBox="0 0 110 140">
+      <defs><clipPath id="ldClip"><path d="M10 6 L100 6 L90 134 L20 134 Z" /></clipPath></defs>
+      <g clip-path="url(#ldClip)">
+        <g id="ldFill">
+          <rect x="0" y="0" width="110" height="140" fill="#2f3d12" />
+          <rect x="0" y="0" width="110" height="12" fill="#c9d77a" />
+        </g>
+      </g>
+      <path class="outline" d="M10 6 L100 6 L90 134 L20 134 Z" />
+    </svg>
+    <p class="ld-txt mono">pulling shot <b id="ldShot">01</b> / 02</p>
+    <p class="ld-word">DOPPIO</p>
+  </div>
+
+  <!-- global fx -->
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__bean"></i><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ================= TICKER + HEADER ================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__run">
+      <span>corso doppio 22, milano</span><span>open 7:00 — 23:00</span><span>always two shots</span><span>one for you, one for later</span><span>wifi password: secondcup</span>
+      <span>corso doppio 22, milano</span><span>open 7:00 — 23:00</span><span>always two shots</span><span>one for you, one for later</span><span>wifi password: secondcup</span>
+    </div>
+  </div>
+  <header class="hdr" id="hdr">
+    <nav class="hdr__pills hdr__pills--l" aria-label="Main">
+      <a href="menu.html" class="pill">menu / prices</a>
+      <a href="sospeso.html" class="pill">the second cup</a>
+    </nav>
+    <a href="index.html" class="logo" aria-label="DOPPIO home">
+      <svg class="logo__badge" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" style="fill:var(--hot)" /><circle class="b1" cx="14.5" cy="20" r="7" fill="none" style="stroke:var(--ink)" stroke-width="2.4" /><circle class="b2" cx="25.5" cy="20" r="7" fill="none" style="stroke:var(--ink)" stroke-width="2.4" /></svg>
+      DOPPIO
+    </a>
+    <nav class="hdr__pills hdr__pills--r" aria-label="More">
+      <a href="room.html" class="pill">the room</a>
+      <a href="about.html" class="pill">about</a>
+      <a href="#name" class="pill pill--green" data-jump data-mag data-cursor="two, please">order two</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 1 · HERO: brewed for everyday double lives ========== -->
+    <section class="hero" id="hero">
+      <div class="hero__top">
+        <p class="kicker" data-scramble>(01) specialty coffee — <b>double by default</b></p>
+        <p class="hero__side mono">warm coffee, loud cups, and a second one for whoever walks in next.</p>
+      </div>
+
+      <div class="hero__title" id="heroTitle">
+        <h1 class="hero__word" id="heroWord" data-fit>DOPPIO</h1>
+        <span class="hero__x2 hand" id="heroX2" aria-hidden="true">×2</span>
+        <div class="hero__echo" aria-hidden="true"><span data-fit>DOPPIO</span></div>
+        <div class="hero__echo" aria-hidden="true"><span data-fit>DOPPIO</span></div>
+      </div>
+
+      <p class="hero__mix" id="heroMix"><b>TWO SHOTS</b> <i>for</i> everyday <i>double</i> <b>LIVES</b></p>
+
+      <div class="stamp" id="stamp" data-cursor="freshly ground">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="stampPath" d="M100 100 m-80 0 a80 80 0 1 1 160 0 a80 80 0 1 1 -160 0" /></defs>
+          <text><textPath href="#stampPath">specialty coffee · open daily · always two shots · roasted twice a week ·</textPath></text>
+        </svg>
+        <div class="stamp__in slot slot--round" data-img="img/HOME/beans.png" data-label="HOME/beans.jpg · ground coffee, top view. square"></div>
+      </div>
+
+      <svg class="hero__arrow" id="heroArrow" viewBox="0 0 90 110" aria-hidden="true">
+        <path d="M12 8 C 34 52, 78 62, 64 34 C 54 14, 18 36, 48 80 L 66 100" />
+        <path d="M50 99 L 67 101 L 66 84" />
+      </svg>
+
+      <div class="shelf" id="shelf">
+        <button class="glass" data-drink="3" data-depth="1.4" data-cursor="sip?">
+          <div class="slot slot--cut" data-img="img/HOME/glass-1.png" data-label="HOME/glass-1.png · orange cold brew, front view, no background. 3:4"></div>
+          <span class="glass__name mono">orange cold brew</span>
+        </button>
+        <button class="glass" data-drink="4" data-depth=".8" data-cursor="sip?">
+          <div class="slot slot--cut" data-img="img/HOME/glass-2.png" data-label="HOME/glass-2.png · cinnamon brew, front view, no background. 3:4"></div>
+          <span class="glass__name mono">cinnamon brew</span>
+        </button>
+        <figure class="shelf__pour" data-depth=".4">
+          <div class="slot slot--cut" data-img="img/HOME/hero-pour.png" data-label="HOME/hero-pour.jpg · hands pouring coffee from a carafe, the big one. 3:4"></div>
+          <figcaption class="mono">the house doppio · 2 × 9g</figcaption>
+        </figure>
+        <button class="glass" data-drink="2" data-depth="1.1" data-cursor="sip?">
+          <div class="slot slot--cut" data-img="img/HOME/glass-3.png" data-label="HOME/glass-3.png · berry matcha, front view, no background. 3:4"></div>
+          <span class="glass__name mono">berry matcha</span>
+        </button>
+        <button class="glass glass--top" data-drink="1" data-depth="1.8" data-cursor="sip?">
+          <div class="slot slot--cut slot--round" data-img="img/HOME/glass-top.png" data-label="HOME/glass-top.png · iced amber latte seen from above, no background. 1:1"></div>
+          <span class="glass__script hand">coffee coffee</span>
+        </button>
+        <button class="glass" data-drink="5" data-depth=".9" data-cursor="sip?">
+          <div class="slot slot--cut" data-img="img/HOME/glass-4.png" data-label="HOME/glass-4.png · choc layers, front view, no background. 3:4"></div>
+          <span class="glass__name mono">choc layers</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========== 2 · THE FLAP BOARD (ref: saka "MATCHA MATCHA MATCHA / FESTIVAL2025") ========== -->
+    <section class="flap" id="flap">
+      <div class="flap__pin">
+        <div class="flap__head mono"><span>(02) today's special</span><span class="flap__fav">favourite drink</span><span id="flapN">01 / 06</span></div>
+        <div class="flap__rows" id="flapRows" aria-live="polite">
+          <p class="flap__row"><span class="flap__word">MATCHA</span></p>
+          <p class="flap__row"><span class="flap__word">MATCHA</span></p>
+          <p class="flap__row"><span class="flap__word">MATCHA</span></p>
+        </div>
+        <div class="flap__glass" id="flapGlass"></div>
+        <p class="flap__fest" id="flapFest"><span id="flapName">doppio</span><b id="flapPrice">€2.80</b></p>
+        <p class="flap__desc mono" id="flapDesc"></p>
+        <p class="flap__hint hand">keep scrolling, the board flips ↓</p>
+      </div>
+    </section>
+
+    <!-- ========== 3 · PULLED TWICE (ref: crafted dose "crafted perfection") ========== -->
+    <section class="twice" id="twice">
+      <div class="twice__corner twice__corner--l"><b>Doppio</b><span>®</span></div>
+      <div class="twice__corner twice__corner--r mono">designed<br />by ghostly.grl</div>
+      <h2 class="twice__w twice__w--top" id="twTop">Pulled</h2>
+      <div class="twice__art" id="twArt">
+        <i class="twice__half twice__half--l" id="twL"></i>
+        <i class="twice__half twice__half--r" id="twR"></i>
+        <div class="twice__glass" id="twGlass" data-cursor="two halves">
+          <div class="slot slot--cut" data-img="img/HOME/twice-glass.png" data-label="HOME/twice-glass.png · a layered iced coffee in a short glass, a sprig of mint on top, no background. 3:4"></div>
+        </div>
+      </div>
+      <h2 class="twice__w twice__w--bot" id="twBot">Twice</h2>
+      <p class="twice__txt">where every cup is pulled two times and every sip feels made for you and for someone else. precision, patience and a second shot that speaks for itself.</p>
+    </section>
+
+    <!-- ========== 4 · THE SHOP WINDOW (ref: petit chou, a horizontal counter) ========== -->
+    <section class="shop" id="menu">
+      <div class="shop__pin" id="shopPin">
+        <div class="shop__bar mono" aria-hidden="true"><span>all day coffee</span><span>corso doppio, milano</span><span>since 2026</span><span id="shopN">scroll →</span></div>
+        <div class="shop__track" id="shopTrack">
+          <article class="shop__intro">
+            <p class="shop__circ mono">03</p>
+            <h2 class="shop__line">Every cup tells two stories, and you only drink one</h2>
+            <div class="shop__card">
+              <div class="shop__cmeta mono"><span>all day<br />coffee</span><span>corso doppio<br />milano</span><span>since<br />2026</span></div>
+              <p class="shop__every mono">every cup<br />has a twin</p>
+              <p class="shop__logo">DOP<br />PIO</p>
+              <p class="shop__lorem mono">two shots in every cup, pulled one after the other and poured together. nobody notices the second one. everybody feels it.</p>
+            </div>
+          </article>
+          <div class="shop__prods" id="shopProds"></div>
+          <article class="shop__split">
+            <div class="shop__macro slot" data-img="img/HOME/macro.jpg" data-label="HOME/macro.jpg · extreme close-up of crema or a croissant crumb, warm. 3:4">
+              <p class="shop__mlogo">DOP<br />PIO</p>
+            </div>
+            <div class="shop__pink">
+              <p class="shop__pk">(( the second shot ))</p>
+              <div class="shop__inside slot slot--cut" data-img="img/HOME/inside.png" data-label="HOME/inside.png · a cornetto cut in half, filling showing, no background. 4:3"></div>
+              <p class="shop__pt">You don't always see what's inside but it's there</p>
+              <a href="menu.html" class="shop__more" data-cursor="the full menu">full menu →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5 · WHAT'S YOUR NAME? ========== -->
+    <section class="name" id="name">
+      <p class="kicker" data-scramble>(04) the question</p>
+      <h2 class="name__q">what's your <i class="serif">name?</i></h2>
+      <form class="name__form" id="nameForm" autocomplete="off">
+        <input class="name__in" id="nameIn" maxlength="14" placeholder="type it here" aria-label="Your name" spellcheck="false" />
+        <label class="name__toggle" data-cursor="nostalgia">
+          <input type="checkbox" id="nameWrong" />
+          <span class="name__sw" aria-hidden="true"></span>
+          spell it like the other place
+        </label>
+        <button class="btn" type="submit" data-mag data-cursor="two, please">order two →</button>
+      </form>
+
+      <div class="cups" id="cups">
+        <figure class="cup" id="cupYou">
+          <svg class="cup__svg" viewBox="0 0 200 300" aria-hidden="true"><use href="#cupShape" /></svg>
+          <p class="cup__name hand" id="nameYou" aria-live="polite"></p>
+          <figcaption class="mono">yours</figcaption>
+        </figure>
+        <span class="cups__plus hand" aria-hidden="true">+</span>
+        <figure class="cup cup--sos" id="cupSos">
+          <svg class="cup__svg" viewBox="0 0 200 300" aria-hidden="true"><use href="#cupShape" /></svg>
+          <p class="cup__name hand" id="nameSos">whoever's next</p>
+          <span class="cup__stamp mono" id="sosStamp">paid<br />forward ♥</span>
+          <figcaption class="mono">left on the counter</figcaption>
+        </figure>
+      </div>
+      <p class="name__count mono" id="sosCount">no cups left for strangers yet. be the first.</p>
+
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="cupShape" viewBox="0 0 200 300">
+          <path d="M30 42 L170 42 L152 290 L48 290 Z" class="cup__body" />
+          <path d="M37.8 150 L162.2 150 L157.1 222 L42.9 222 Z" class="cup__sleeve" />
+          <text x="100" y="194" text-anchor="middle" class="cup__logo">DOPPIO</text>
+          <rect x="20" y="22" width="160" height="22" rx="8" class="cup__lid" />
+          <path d="M36 22 L46 8 L154 8 L164 22 Z" class="cup__lid" />
+        </symbol>
+      </svg>
+    </section>
+
+    <!-- ========== 6 · ICED AMBER LATTE: act 1 brewed stats (ref: BREWED mockup), act 2 the anatomy (ref: -40 "n°01 _ collagen") ========== -->
+    <section class="amber" id="amber">
+      <div class="amber__stage" id="amberStage">
+        <!-- act 1 -->
+        <div class="amber__a1">
+        <p class="amber__made a1">Made for the ones who taste the difference</p>
+        <p class="amber__deal a1">the second one's on us — almost <i>✦</i> <b>2 for 1 today</b></p>
+        </div>
+        <div class="amber__rows" aria-hidden="true">
+          <p class="amber__row"><span data-fit>ICED AMBER LATTE</span></p>
+          <p class="amber__row"><span data-fit>ICED AMBER LATTE</span></p>
+          <p class="amber__row"><span data-fit>ICED AMBER LATTE</span></p>
+        </div>
+        <div class="amber__a1">
+        <div class="amber__left a1">
+          <p>we pull every shot twice, burn the sugar ourselves and pour it over more ice than you asked for. the kind of care that shows up in the cup.</p>
+          <div class="amber__pills"><a href="#menu" class="amber__pill amber__pill--fill" data-jump data-mag>drinks</a><a href="about.html" class="amber__pill" data-mag>our story</a></div>
+        </div>
+        <div class="amber__stats a1">
+          <p><b data-count="2">0</b><span class="mono">shots in every cup</span></p>
+          <p><b data-count="4.8" data-dec="1">0</b><i>★</i><span class="mono">ratings</span></p>
+          <p><b data-count="2002">0</b><i>+</i><span class="mono">strangers served</span></p>
+        </div>
+
+        </div>
+
+        <!-- act 2 -->
+        <h2 class="amber__title mono a2">n°02 _ iced amber latte <small>(2 shots)</small></h2>
+        <p class="amber__sub mono a2">function meets pleasure.<br />two shots inside.<br />visible outside.</p>
+        <svg class="amber__lines" id="amberLines" aria-hidden="true"></svg>
+
+        <div class="amber__cup" id="amberCup" data-cursor="iced amber">
+          <div class="slot slot--cut" data-img="img/HOME/amber-cup.png" data-label="HOME/amber-cup.png · iced amber latte in a clear cup, caramel dripping down, cream on top, no background. 2:3"></div>
+        </div>
+
+        <figure class="ing ing--l" style="--y:20%" data-hot="25,27"><div class="slot" data-img="img/HOME/amber/01.jpg" data-label="amber/01.jpg · caramel. 1:1"></div><figcaption class="mono">burnt sugar<br />caramel</figcaption></figure>
+        <figure class="ing ing--l" style="--y:46%" data-hot="22,50"><div class="slot" data-img="img/HOME/amber/05.jpg" data-label="amber/05.jpg · espresso crema. 1:1"></div><figcaption class="mono">espresso<br />two shots</figcaption></figure>
+        <figure class="ing ing--l" style="--y:72%" data-hot="34,79"><div class="slot" data-img="img/HOME/amber/02.jpg" data-label="amber/02.jpg · milk swirl. 1:1"></div><figcaption class="mono">oat milk<br />cold, never boiled</figcaption></figure>
+        <figure class="ing ing--r" style="--y:20%" data-hot="77,17"><div class="slot" data-img="img/HOME/amber/04.jpg" data-label="amber/04.jpg · whipped cream. 1:1"></div><figcaption class="mono">whipped cream<br />a pinch of sea salt</figcaption></figure>
+        <figure class="ing ing--r" style="--y:46%" data-hot="73,40"><div class="slot" data-img="img/HOME/amber/03.jpg" data-label="amber/03.jpg · milk foam. 1:1"></div><figcaption class="mono">milk foam<br />hand-frothed</figcaption></figure>
+        <figure class="ing ing--r" style="--y:72%" data-hot="75,85"><div class="slot" data-img="img/HOME/amber/06.jpg" data-label="amber/06.jpg · ice cubes. 1:1"></div><figcaption class="mono">hand-cut<br />ice</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="ft">
+      <span class="ft__word" data-fit>DOPPIO</span>
+      <p class="ft__script">see you twice ♥</p>
+      <div class="ft__grid">
+        <div><p class="ft__k">the house</p><p class="ft__links"><a href="menu.html">menu / prices</a><a href="sospeso.html">the second cup</a><a href="room.html">the room</a><a href="about.html">about</a></p></div>
+        <div><p class="ft__k">this page</p><p class="ft__links"><a href="#flap" data-jump>today's special</a><a href="#menu" data-jump>the counter</a><a href="#name" data-jump>your name</a><a href="#amber" data-jump>iced amber</a></p></div>
+        <div><p class="ft__k">hours</p><p class="ft__links"><span>mon — fri · 7:00 — 23:00</span><span>sat — sun · 8:00 — 24:00</span><span>closed: never twice in a row</span></p></div>
+        <div><p class="ft__k">milano, right now</p><p class="ft__clock" data-clock>00:00</p><p class="ft__links"><span id="machine">the machine is on.</span><a href="#top" data-jump>back to shot 01 ↑</a></p></div>
+      </div>
+      <div class="ft__bottom">
+        <span>© 2026 DOPPIO — a concept. no single shots were pulled.</span>
+        <span class="ft-sign">concept, design &amp; code by <span class="sig">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/data.js?v=20261025-18"></script>
+  <script src="js/main.js?v=20261025-18"></script>
+  <script src="js/home.js?v=20261025-18"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <   ☕     *
+-->
+</html>

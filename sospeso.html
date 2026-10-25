@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>DOPPIO — the second cup</title>
+  <meta name="description" content="Caffè sospeso at DOPPIO: every order comes in twos, and the second cup waits on the wall for whoever walks in next." />
+  <meta name="theme-color" content="#ec8aa0" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Caveat:wght@500;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20261025-18" />
+  <link rel="stylesheet" href="css/sospeso.css?v=20261025-18" />
+</head>
+<body class="is-loading" data-page="sospeso">
+
+  <!-- ================= LOADER ================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="ld-glass" viewBox="0 0 110 140">
+      <defs><clipPath id="ldClip"><path d="M10 6 L100 6 L90 134 L20 134 Z" /></clipPath></defs>
+      <g clip-path="url(#ldClip)">
+        <g id="ldFill">
+          <rect x="0" y="0" width="110" height="140" fill="#2f3d12" />
+          <rect x="0" y="0" width="110" height="12" fill="#c9d77a" />
+        </g>
+      </g>
+      <path class="outline" d="M10 6 L100 6 L90 134 L20 134 Z" />
+    </svg>
+    <p class="ld-txt mono">one for you <b id="ldShot">01</b> / 02 for later</p>
+    <p class="ld-word">SOSPESO</p>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__bean"></i><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ================= TICKER + HEADER ================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__run">
+      <span>caffè sospeso</span><span>a napoli habit since the 1900s</span><span>one for you, one for later</span><span>take one if you need one</span><span>no questions, no receipts asked</span>
+      <span>caffè sospeso</span><span>a napoli habit since the 1900s</span><span>one for you, one for later</span><span>take one if you need one</span><span>no questions, no receipts asked</span>
+    </div>
+  </div>
+  <header class="hdr" id="hdr">
+    <nav class="hdr__pills hdr__pills--l" aria-label="Main">
+      <a href="menu.html" class="pill">menu / prices</a>
+      <a href="sospeso.html" class="pill is-on" aria-current="page">the second cup</a>
+    </nav>
+    <a href="index.html" class="logo" aria-label="DOPPIO home">
+      <svg class="logo__badge" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" style="fill:var(--hot)" /><circle class="b1" cx="14.5" cy="20" r="7" fill="none" style="stroke:var(--ink)" stroke-width="2.4" /><circle class="b2" cx="25.5" cy="20" r="7" fill="none" style="stroke:var(--ink)" stroke-width="2.4" /></svg>
+      DOPPIO
+    </a>
+    <nav class="hdr__pills hdr__pills--r" aria-label="More">
+      <a href="room.html" class="pill">the room</a>
+      <a href="about.html" class="pill">about</a>
+      <a href="#leave" class="pill pill--green" data-jump data-mag data-cursor="pay it forward">leave one</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 1 · HERO (ref: organic dairy, halftone duotone hero) ========== -->
+    <section class="sh" id="hero" data-cursor="the dots are coffee">
+      <canvas class="sh__dots" id="heroDots" aria-hidden="true"></canvas>
+      <div class="ht-src slot" id="heroSrc" data-img="img/SOSPESO/hero.png" data-label="SOSPESO/hero.jpg · two hands passing a cup across the counter. becomes dots"></div>
+      <div class="sh__copy">
+        <p class="kicker" data-scramble>(sospeso) the second cup — <b>since napoli</b></p>
+        <h1 class="sh__t">The second<br />cup.</h1>
+        <p class="sh__p">every order at DOPPIO comes in twos. you drink one. the other is paid, poured, and left on the wall for whoever walks in next and needs it more than you. no names asked, no thanks expected.</p>
+        <div class="sh__count"><b id="wallCount">0</b><span class="mono">cups waiting on the wall<br />right now</span></div>
+      </div>
+    </section>
+
+    <!-- ========== 2 · HOW IT WORKS (ref: organic dairy, three products in a row) ========== -->
+    <section class="how" id="how">
+      <h2 class="how__t">How the second cup works</h2>
+      <div class="how__row" id="howRow">
+        <svg class="how__path" id="howPath" aria-hidden="true"><path id="howLine" /></svg>
+        <span class="how__runner" id="howRunner" aria-hidden="true"><svg viewBox="0 0 40 48"><path d="M6 10 L34 10 L30 46 L10 46 Z" /><rect x="3" y="5" width="34" height="6" rx="3" /><rect x="8" y="22" width="24" height="10" /></svg></span>
+        <figure class="step">
+          <div class="step__img slot" data-img="img/SOSPESO/step-1.jpg" data-label="SOSPESO/step-1.jpg · someone ordering at the counter. 4:5"></div>
+          <figcaption><b class="mono">01</b> you order two</figcaption>
+        </figure>
+        <figure class="step step--big">
+          <div class="step__img slot" data-img="img/SOSPESO/step-2.jpg" data-label="SOSPESO/step-2.jpg · a paper cup with a ticket, hanging on a wall. 3:4"></div>
+          <figcaption><b class="mono">02</b> one goes on the wall</figcaption>
+        </figure>
+        <figure class="step">
+          <div class="step__img slot" data-img="img/SOSPESO/step-3.jpg" data-label="SOSPESO/step-3.jpg · a stranger taking a cup, smiling. 4:5"></div>
+          <figcaption><b class="mono">03</b> someone takes it</figcaption>
+        </figure>
+      </div>
+      <p class="how__s">the kindest way to have two coffees</p>
+    </section>
+
+    <!-- ========== 3 · THE WALL: leave one, take one ========== -->
+    <section class="wall" id="leave">
+      <div class="wall__head">
+        <div>
+          <p class="kicker" data-scramble>(the wall) live, from this counter — <b>take one, leave one</b></p>
+          <h2 class="wall__t">the <i class="serif">wall</i></h2>
+        </div>
+        <form class="leave" id="leaveForm" autocomplete="off">
+          <label><span class="mono">from</span><input id="lvFrom" maxlength="16" placeholder="your name, or anon" /></label>
+          <label><span class="mono">for</span><input id="lvFor" maxlength="22" placeholder="whoever's next" /></label>
+          <label><span class="mono">what</span><select id="lvWhat"></select></label>
+          <button class="btn" type="submit" data-mag data-cursor="pin it">leave one →</button>
+        </form>
+      </div>
+      <div class="wall__board" id="wallBoard" aria-live="polite"></div>
+      <p class="wall__hint hand">click a ticket if you need it. really. that's what it's for.</p>
+    </section>
+
+    <!-- ========== 4 · THE STORY (ref: organic dairy, halftone branch + story card) ========== -->
+    <section class="story" id="story">
+      <canvas class="story__dots" id="storyDots" aria-hidden="true"></canvas>
+      <div class="ht-src slot" id="storySrc" data-img="img/SOSPESO/story-cut.png" data-label="SOSPESO/story-cut.png · the espresso glass cut out of story.jpg. becomes dots"></div>
+      <div class="story__card" id="storyCard">
+        <h2 class="story__t">A napoli habit</h2>
+        <div class="story__cols">
+          <p>in napoli, people who had a little luck paid for two coffees and drank one. the second was "suspended": the barista kept the receipt, and when someone poor walked in and asked if there was a sospeso, there was.</p>
+          <p>we liked it so much we made it the whole menu. every order here is a doppio, every doppio comes with a second cup, and the wall is never empty for long. it's not charity. it's coffee, twice.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5 · WHAT A SECOND CUP DOES (ref: organic dairy, carton with arrows) ========== -->
+    <section class="does" id="does">
+      <h2 class="does__t">What a second cup does</h2>
+      <div class="does__stage" id="doesStage">
+        <svg class="does__arrows" id="doesArrows" aria-hidden="true"></svg>
+        <figure class="does__cup" id="doesCup">
+          <svg viewBox="0 0 200 300" aria-hidden="true">
+            <path d="M30 42 L170 42 L152 290 L48 290 Z" class="cup__body" />
+            <path d="M37.8 150 L162.2 150 L157.1 222 L42.9 222 Z" class="cup__sleeve" />
+            <text x="100" y="194" text-anchor="middle" class="cup__logo">DOPPIO</text>
+            <rect x="20" y="22" width="160" height="22" rx="8" class="cup__lid" />
+            <path d="M36 22 L46 8 L154 8 L164 22 Z" class="cup__lid" />
+          </svg>
+          <p class="does__name hand">a stranger ♥</p>
+        </figure>
+        <p class="lab" data-a="-90" style="--x:50%;--y:2%">someone's<br />whole morning</p>
+        <p class="lab" data-a="-30" style="--x:84%;--y:22%">good karma,<br />×2</p>
+        <p class="lab" data-a="30" style="--x:86%;--y:74%">warm hands<br />on the tram</p>
+        <p class="lab" data-a="150" style="--x:14%;--y:74%">a story to tell<br />at dinner</p>
+        <p class="lab" data-a="210" style="--x:16%;--y:22%">zero waste<br />of kindness</p>
+        <p class="lab" data-a="90" style="--x:50%;--y:100%">tax deductible?<br />no. still worth it</p>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="ft">
+      <span class="ft__word" data-fit>DOPPIO</span>
+      <p class="ft__script">see you twice ♥</p>
+      <div class="ft__grid">
+        <div><p class="ft__k">the house</p><p class="ft__links"><a href="index.html">home</a><a href="menu.html">menu / prices</a><a href="sospeso.html">the second cup</a><a href="room.html">the room</a><a href="about.html">about</a></p></div>
+        <div><p class="ft__k">this page</p><p class="ft__links"><a href="#how" data-jump>how it works</a><a href="#leave" data-jump>the wall</a><a href="#story" data-jump>the story</a><a href="#does" data-jump>what it does</a></p></div>
+        <div><p class="ft__k">the rules</p><p class="ft__links"><span>take one if you need one</span><span>no questions asked</span><span>leave one when you can</span></p></div>
+        <div><p class="ft__k">milano, right now</p><p class="ft__clock" data-clock>00:00</p><p class="ft__links"><span id="machine">the machine is on.</span><a href="#top" data-jump>back to the dots ↑</a></p></div>
+      </div>
+      <div class="ft__bottom">
+        <span>© 2026 DOPPIO — a concept. the wall is pretend, the habit is real.</span>
+        <span class="ft-sign">concept, design &amp; code by <span class="sig">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/data.js?v=20261025-18"></script>
+  <script src="js/main.js?v=20261025-18"></script>
+  <script src="js/sospeso.js?v=20261025-18"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <   ☕     *
+-->
+</html>

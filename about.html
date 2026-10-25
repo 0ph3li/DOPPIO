@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>DOPPIO — about</title>
+  <meta name="description" content="About DOPPIO: two people, two machines, one habit from napoli. A coffee house where everything comes in twos, since 2019." />
+  <meta name="theme-color" content="#f9faec" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Caveat:wght@500;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20261025-19" />
+  <link rel="stylesheet" href="css/about.css?v=20261025-19" />
+</head>
+<body class="is-loading" data-page="about">
+
+  <!-- ================= LOADER ================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="ld-glass" viewBox="0 0 110 140">
+      <defs><clipPath id="ldClip"><path d="M10 6 L100 6 L90 134 L20 134 Z" /></clipPath></defs>
+      <g clip-path="url(#ldClip)">
+        <g id="ldFill">
+          <rect x="0" y="0" width="110" height="140" fill="#2f3d12" />
+          <rect x="0" y="0" width="110" height="12" fill="#c9d77a" />
+        </g>
+      </g>
+      <path class="outline" d="M10 6 L100 6 L90 134 L20 134 Z" />
+    </svg>
+    <p class="ld-txt mono">meeting the two of us <b id="ldShot">01</b> / 02</p>
+    <p class="ld-word">ABOUT</p>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__bean"></i><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ================= TICKER + HEADER ================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__run">
+      <span>two people</span><span>two machines</span><span>one habit from napoli</span><span>since 2019</span><span>still arguing about who pulls the shot</span>
+      <span>two people</span><span>two machines</span><span>one habit from napoli</span><span>since 2019</span><span>still arguing about who pulls the shot</span>
+    </div>
+  </div>
+  <header class="hdr" id="hdr">
+    <nav class="hdr__pills hdr__pills--l" aria-label="Main">
+      <a href="menu.html" class="pill">menu / prices</a>
+      <a href="sospeso.html" class="pill">the second cup</a>
+    </nav>
+    <a href="index.html" class="logo" aria-label="DOPPIO home">
+      <svg class="logo__badge" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" style="fill:var(--hot)" /><circle class="b1" cx="14.5" cy="20" r="7" fill="none" style="stroke:var(--ink)" stroke-width="2.4" /><circle class="b2" cx="25.5" cy="20" r="7" fill="none" style="stroke:var(--ink)" stroke-width="2.4" /></svg>
+      DOPPIO
+    </a>
+    <nav class="hdr__pills hdr__pills--r" aria-label="More">
+      <a href="room.html" class="pill">the room</a>
+      <a href="about.html" class="pill is-on" aria-current="page">about</a>
+      <a href="#hi" class="pill pill--green" data-jump data-mag data-cursor="say hi">say hi</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 1 · HERO (ref: kōhi "brewing calm" poster, frosted glass) ========== -->
+    <section class="ah" id="hero">
+      <div class="ah__glass">
+        <div class="ah__photo ah__photo--blur slot" data-img="img/ABOUT/hero.jpg" data-label="ABOUT/hero.jpg · the café through a steamy window, warm light, a cup in front. 4:5 or 16:9"></div>
+        <div class="ah__photo ah__photo--sharp slot" id="ahSharp" data-img="img/ABOUT/hero.jpg"></div>
+        <i class="ah__frost" aria-hidden="true"></i>
+      </div>
+      <div class="ah__ui">
+        <div class="ah__bar mono"><span>DOPPIO — milano</span><span>brewing twice</span></div>
+        <h1 class="ah__word" id="ahWord" aria-label="DOPPIO"><span class="ah__letters" id="ahLetters">DOPPIO</span><i class="ah__lid" aria-hidden="true"></i><i class="ah__lid" aria-hidden="true"></i></h1>
+        <p class="ah__l mono">a second cup for busy minds</p>
+        <p class="ah__r mono">we believe in slow mornings and second chances. in the space between one shot and the next, time slows. here, coffee is never single. it's shared.</p>
+        <p class="ah__hint hand">scroll, the steam clears</p>
+      </div>
+    </section>
+
+    <!-- ========== 2 · TWO OF US (ref: moff "почему мы?" frame: giant question, hand with cups) ========== -->
+    <section class="two" id="two">
+      <div class="two__copy">
+        <p class="kicker" data-scramble>(about) the people — <b>both of them</b></p>
+        <h2 class="two__t"><span class="ln">Why</span><span class="ln">two?</span></h2>
+        <p class="two__p">because there were always two of us. livia pulls the first shot, ottavio pulls the second, and in 2019 neither of us would let the other do both. so we built a whole coffee house around the argument.</p>
+      </div>
+      <div class="two__deck" id="deck" data-cursor="shuffle">
+        <figure class="fc" data-name="ottavio">
+          <div class="slot" data-img="img/ABOUT/founder-2.jpg" data-label="ABOUT/founder-2.jpg · founder two, flash photo, holding a cup. 3:4"></div>
+          <figcaption><span class="mono">ottavio · the second shot</span><span class="hand">"the better one"</span></figcaption>
+        </figure>
+        <figure class="fc" data-name="livia">
+          <div class="slot" data-img="img/ABOUT/founder-1.jpg" data-label="ABOUT/founder-1.jpg · founder one, flash photo, holding a cup. 3:4"></div>
+          <figcaption><span class="mono">livia · the first shot</span><span class="hand">"the original"</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========== 3 · HOW WE GOT HERE: a year that rolls like an odometer ========== -->
+    <section class="tl" id="story">
+      <div class="tl__side">
+        <p class="kicker" data-scramble>(since) how we got here</p>
+        <p class="tl__year" id="tlYear" aria-live="polite"><span class="tl__d">2</span><span class="tl__d">0</span><span class="tl__d">1</span><span class="tl__d">9</span></p>
+        <p class="tl__sub mono" id="tlSub">a bench and two cups</p>
+      </div>
+      <div class="tl__list">
+        <article class="tl__item" data-year="2019" data-sub="a bench and two cups">
+          <div class="slot" data-img="img/ABOUT/2019.jpg" data-label="ABOUT/2019.jpg · two iced coffees on a bench. 4:5"></div>
+          <h3>a bench and two cups</h3>
+          <p>one machine on a cart near the duomo and a bench next to it. we sold two coffees for the price of one for a whole month, by accident. nobody complained. the queue got longer.</p>
+        </article>
+        <article class="tl__item" data-year="2021" data-sub="the second machine">
+          <div class="slot" data-img="img/ABOUT/2021.jpg" data-label="ABOUT/2021.jpg · two espresso machines side by side. 4:5"></div>
+          <h3>the second machine</h3>
+          <p>we bought a second machine so we would stop arguing about who pulls the shot. we still argue. now the coffee is just twice as fast.</p>
+        </article>
+        <article class="tl__item" data-year="2023" data-sub="the wall">
+          <div class="slot" data-img="img/ABOUT/2023.jpg" data-label="ABOUT/2023.jpg · paper tickets pinned to a wall. 4:5"></div>
+          <h3>the wall</h3>
+          <p>a regular left a coffee for "whoever looks tired". by friday the wall was full of tickets. we never took it down. <a href="sospeso.html">the second cup →</a></p>
+        </article>
+        <article class="tl__item" data-year="2026" data-sub="corso doppio 22">
+          <div class="slot" data-img="img/ABOUT/2026.jpg" data-label="ABOUT/2026.jpg · the café today, full, warm light. 4:5"></div>
+          <h3>corso doppio 22</h3>
+          <p>forty seats, two plugs per table and one cat, occasionally. you're here now. <a href="room.html">the room →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== 4 · SAY HI + the signature ========== -->
+    <section class="hi" id="hi">
+      <h2 class="hi__t"><span class="ln">say hi,</span> <i class="serif ln">twice.</i></h2>
+      <form class="hi__form" id="hiForm" autocomplete="off">
+        <label class="mono" for="hiMail">two emails a year. one for you, one to forward.</label>
+        <div class="hi__row"><input id="hiMail" type="email" placeholder="your@email" required /><button class="btn" type="submit" data-mag data-cursor="twice a year">sign me up →</button></div>
+      </form>
+      <div class="hi__grid">
+        <div><p class="hi__k mono">write to us</p><p>hello@doppio.coffee</p><p>we answer twice</p></div>
+        <div><p class="hi__k mono">jobs</p><p>baristas who can count to two</p><p>a cat-sitter, occasionally</p></div>
+        <div><p class="hi__k mono">press</p><p>press@doppio.coffee</p><p>photos in pairs only</p></div>
+      </div>
+      <div class="sig-big" id="sigBig">
+        <p class="sig-big__k mono">this whole place, concept, design &amp; code by</p>
+        <p class="sig-big__name" id="sigName">ghostly.grl</p>
+        <p class="sig-big__heart" aria-hidden="true">♥</p>
+        <pre class="sig-big__cat mono" aria-hidden="true">  /\_/\
+ ( o.o )  two coffees, one cat
+  &gt; ^ &lt;</pre>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="ft">
+      <span class="ft__word" data-fit>DOPPIO</span>
+      <p class="ft__script">see you twice ♥</p>
+      <div class="ft__grid">
+        <div><p class="ft__k">the house</p><p class="ft__links"><a href="index.html">home</a><a href="menu.html">menu / prices</a><a href="sospeso.html">the second cup</a><a href="room.html">the room</a><a href="about.html">about</a></p></div>
+        <div><p class="ft__k">this page</p><p class="ft__links"><a href="#two" data-jump>why two?</a><a href="#story" data-jump>how we got here</a><a href="#hi" data-jump>say hi</a></p></div>
+        <div><p class="ft__k">hours</p><p class="ft__links"><span>mon — fri · 7:00 — 23:00</span><span>sat — sun · 8:00 — 24:00</span><span>closed: never twice in a row</span></p></div>
+        <div><p class="ft__k">milano, right now</p><p class="ft__clock" data-clock>00:00</p><p class="ft__links"><span id="machine">the machine is on.</span><a href="#top" data-jump>back to the steam ↑</a></p></div>
+      </div>
+      <div class="ft__bottom">
+        <span>© 2026 DOPPIO — a concept. livia and ottavio are pretend, the argument is real.</span>
+        <span class="ft-sign">concept, design &amp; code by <span class="sig">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/data.js?v=20261025-19"></script>
+  <script src="js/main.js?v=20261025-19"></script>
+  <script src="js/about.js?v=20261025-19"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <   ☕     *
+-->
+</html>

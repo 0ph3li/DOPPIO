@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>DOPPIO — the room</title>
+  <meta name="description" content="The DOPPIO room on corso doppio 22, milano: forty seats, two plugs per table, open every day, weekends too." />
+  <meta name="theme-color" content="#eef2c9" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Caveat:wght@500;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20261025-19" />
+  <link rel="stylesheet" href="css/room.css?v=20261025-19" />
+</head>
+<body class="is-loading" data-page="room">
+
+  <!-- ================= LOADER ================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="ld-glass" viewBox="0 0 110 140">
+      <defs><clipPath id="ldClip"><path d="M10 6 L100 6 L90 134 L20 134 Z" /></clipPath></defs>
+      <g clip-path="url(#ldClip)">
+        <g id="ldFill">
+          <rect x="0" y="0" width="110" height="140" fill="#2f3d12" />
+          <rect x="0" y="0" width="110" height="12" fill="#c9d77a" />
+        </g>
+      </g>
+      <path class="outline" d="M10 6 L100 6 L90 134 L20 134 Z" />
+    </svg>
+    <p class="ld-txt mono">unlocking the door <b id="ldShot">01</b> / 02</p>
+    <p class="ld-word">ROOM</p>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__bean"></i><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ================= TICKER + HEADER ================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__run">
+      <span>corso doppio 22, milano</span><span>40 seats</span><span>two plugs per table</span><span>open every day, weekends too</span><span>dogs welcome, cats tolerated</span>
+      <span>corso doppio 22, milano</span><span>40 seats</span><span>two plugs per table</span><span>open every day, weekends too</span><span>dogs welcome, cats tolerated</span>
+    </div>
+  </div>
+  <header class="hdr" id="hdr">
+    <nav class="hdr__pills hdr__pills--l" aria-label="Main">
+      <a href="menu.html" class="pill">menu / prices</a>
+      <a href="sospeso.html" class="pill">the second cup</a>
+    </nav>
+    <a href="index.html" class="logo" aria-label="DOPPIO home">
+      <svg class="logo__badge" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" style="fill:var(--hot)" /><circle class="b1" cx="14.5" cy="20" r="7" fill="none" style="stroke:var(--ink)" stroke-width="2.4" /><circle class="b2" cx="25.5" cy="20" r="7" fill="none" style="stroke:var(--ink)" stroke-width="2.4" /></svg>
+      DOPPIO
+    </a>
+    <nav class="hdr__pills hdr__pills--r" aria-label="More">
+      <a href="room.html" class="pill is-on" aria-current="page">the room</a>
+      <a href="about.html" class="pill">about</a>
+      <a href="#plan" class="pill pill--green" data-jump data-mag data-cursor="find a seat">find a seat</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 1 · HERO (ref: moff "moff." frame, the bowl cropped top-right) ========== -->
+    <section class="rh" id="hero">
+      <div class="rh__plate" id="rhPlate" data-cursor="table 7, from above">
+        <div class="slot slot--cut slot--round" data-img="img/ROOM/table.png" data-label="ROOM/table.png · a café table seen from straight above, two cups on it. square"></div>
+      </div>
+      <div class="rh__bottom">
+        <h1 class="rh__t" id="rhT"><span class="rh__w">the room</span><span class="rh__dot" id="rhDot">.</span><i class="rh__ring" id="rhRing" aria-hidden="true"></i></h1>
+        <p class="rh__p">only specialty roast. only fresh milk. only honest care for your taste. there's no such thing as "just a coffee" here, there's a ritual. a pause. a small double pleasure in a big day.</p>
+        <p class="rh__facts mono"><span>40 seats</span><span>2 plugs per table</span><span>1 cat, occasionally</span></p>
+      </div>
+    </section>
+
+    <!-- ========== 2 · GOOD MORNING (ref: moff "доброе" frame: giant greeting, cup in front, badge) ========== -->
+    <section class="gm" id="day">
+      <div class="gm__words" aria-live="polite">
+        <p class="gm__w gm__w--1">Good</p>
+        <p class="gm__w gm__w--2" id="gmWord">morning</p>
+      </div>
+      <div class="gm__cup" id="gmCup">
+        <div class="slot slot--cut" data-img="img/HOME/front/amber.png" data-label="HOME/front/amber.png"></div>
+      </div>
+      <div class="gm__badge" id="gmBadge">
+        <span class="gm__icon" id="gmIcon" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><circle class="sun" cx="20" cy="20" r="7" /><g class="rays"><path d="M20 5v5M20 30v5M5 20h5M30 20h5M9.4 9.4l3.5 3.5M27.1 27.1l3.5 3.5M9.4 30.6l3.5-3.5M27.1 12.9l3.5-3.5" /></g><path class="moon" d="M24 9a11 11 0 1 0 7 19A9 9 0 0 1 24 9z" /></svg>
+        </span>
+        <p>open every day,<br />weekends too</p>
+      </div>
+      <div class="gm__info">
+        <p class="gm__time"><b id="gmTime">08:00</b><span class="gm__status mono" id="gmStatus">open</span></p>
+        <p class="gm__what" id="gmWhat"></p>
+      </div>
+      <div class="gm__bar">
+        <div class="gm__track" id="gmTrack">
+          <div class="gm__ticks mono" id="gmTicks" aria-hidden="true"></div>
+          <i class="gm__now" id="gmNow" aria-hidden="true"><span class="mono">now</span></i>
+          <i class="gm__knob" id="gmKnob" aria-hidden="true"></i>
+          <input class="gm__range" id="gmRange" type="range" min="360" max="1440" step="5" value="480" aria-label="Time of day" data-cursor="drag the sun" />
+        </div>
+        <p class="gm__hint hand">drag the sun through the day →</p>
+      </div>
+    </section>
+
+    <!-- ========== 3 · THE FLOOR (ref: -40 callouts, on a floor plan) ========== -->
+    <section class="plan" id="plan">
+      <h2 class="plan__title mono" data-scramble>n°03 _ the floor <small>(40 seats)</small></h2>
+      <p class="plan__sub mono">pick a seat. it's yours for twenty minutes.<br /><b id="planFree">0</b> free right now.</p>
+      <div class="plan__stage" id="planStage">
+        <svg class="plan__lines" id="planLines" aria-hidden="true"></svg>
+        <div class="plan__map">
+          <svg class="plan__svg" id="planSvg" viewBox="0 0 800 520" role="img" aria-label="Floor plan of DOPPIO">
+            <g class="pl-walls">
+              <path d="M30 30 H770 V490 H30 Z" />
+              <path class="pl-window" d="M90 30 H710" />
+              <path d="M30 420 H300 M300 420 V490" />
+              <path d="M740 470 a30 30 0 0 0 -30 -30" />
+            </g>
+            <g class="pl-furn">
+              <rect x="110" y="40" width="580" height="12" rx="3" />
+              <rect x="60" y="180" width="40" height="140" rx="10" /><rect x="100" y="355" width="170" height="36" rx="10" />
+              <rect x="300" y="215" width="420" height="50" rx="6" />
+              <circle cx="400" cy="400" r="14" /><circle cx="540" cy="400" r="14" /><circle cx="680" cy="400" r="14" />
+              <rect x="40" y="430" width="250" height="50" rx="4" class="pl-counter" />
+            </g>
+            <text x="165" y="462" class="pl-label">the counter · two machines</text>
+            <text x="400" y="23" class="pl-label" text-anchor="middle">corso doppio → window</text>
+            <g id="planSeats"></g>
+          </svg>
+        </div>
+        <figure class="zc zc--l" style="--y:6%" data-zone="window"><div class="slot" data-img="img/ROOM/window.jpg" data-label="ROOM/window.jpg · the window bar, stools facing the street. 1:1"></div><figcaption class="mono">the window bar<br /><small>8 stools</small></figcaption></figure>
+        <figure class="zc zc--l" style="--y:56%" data-zone="sofa"><div class="slot" data-img="img/ROOM/sofa.jpg" data-label="ROOM/sofa.jpg · a corner sofa with cushions. 1:1"></div><figcaption class="mono">the sofa corner<br /><small>6 seats</small></figcaption></figure>
+        <figure class="zc zc--r" style="--y:6%" data-zone="long"><div class="slot" data-img="img/ROOM/long.jpg" data-label="ROOM/long.jpg · a long shared table with laptops. 1:1"></div><figcaption class="mono">the long table<br /><small>14 seats</small></figcaption></figure>
+        <figure class="zc zc--r" style="--y:56%" data-zone="two"><div class="slot" data-img="img/ROOM/two.jpg" data-label="ROOM/two.jpg · a small round table for two. 1:1"></div><figcaption class="mono">the two-seaters<br /><small>12 seats</small></figcaption></figure>
+      </div>
+      <p class="plan__legend mono"><span><i class="lg lg--free"></i>free</span><span><i class="lg lg--busy"></i>taken</span><span><i class="lg lg--mine"></i>yours</span></p>
+    </section>
+
+    <!-- ========== 4 · VISIT ========== -->
+    <section class="visit" id="visit">
+      <p class="kicker" data-scramble>(visit) come in — <b>the door is the green one</b></p>
+      <h2 class="visit__addr"><span data-fit>corso doppio 22</span></h2>
+      <div class="visit__grid">
+        <svg class="visit__map" id="visitMap" viewBox="0 0 400 300" aria-hidden="true">
+          <g class="vm-streets">
+            <path d="M0 150 H400" class="vm-main" /><path d="M120 0 V300" /><path d="M280 0 V300" /><path d="M0 60 L400 40" /><path d="M0 250 L400 270" /><path d="M200 150 L260 300" />
+          </g>
+          <text x="20" y="140" class="vm-name">corso doppio</text>
+          <text x="128" y="20" class="vm-name">via del secondo</text>
+          <g class="vm-pin" id="vmPin"><circle cx="200" cy="150" r="14" /><circle cx="200" cy="150" r="5" class="vm-pin__in" /></g>
+          <circle cx="200" cy="150" r="14" class="vm-pulse" id="vmPulse" />
+        </svg>
+        <div class="visit__col"><p class="visit__k mono">hours</p><p>mon — fri · 7:00 — 23:00</p><p>sat — sun · 8:00 — 24:00</p><p class="visit__open" id="visitOpen"></p></div>
+        <div class="visit__col"><p class="visit__k mono">getting here</p><p>M1 · cordusio, 3 min</p><p>tram 2 · 14 · 16</p><p>12 bike racks out front</p></div>
+        <div class="visit__col"><p class="visit__k mono">small print</p><p>dogs welcome, cats tolerated</p><p>laptops until 17:00 at weekends</p><p>the wifi password is on the cup</p></div>
+      </div>
+      <a href="#" class="btn" data-toast="it's a concept. but corso doppio would be a lovely street, wouldn't it." data-mag data-cursor="go">open in maps →</a>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="ft">
+      <span class="ft__word" data-fit>DOPPIO</span>
+      <p class="ft__script">see you twice ♥</p>
+      <div class="ft__grid">
+        <div><p class="ft__k">the house</p><p class="ft__links"><a href="index.html">home</a><a href="menu.html">menu / prices</a><a href="sospeso.html">the second cup</a><a href="room.html">the room</a><a href="about.html">about</a></p></div>
+        <div><p class="ft__k">this page</p><p class="ft__links"><a href="#day" data-jump>the day</a><a href="#plan" data-jump>the floor</a><a href="#visit" data-jump>visit</a></p></div>
+        <div><p class="ft__k">hours</p><p class="ft__links"><span>mon — fri · 7:00 — 23:00</span><span>sat — sun · 8:00 — 24:00</span><span>closed: never twice in a row</span></p></div>
+        <div><p class="ft__k">milano, right now</p><p class="ft__clock" data-clock>00:00</p><p class="ft__links"><span id="machine">the machine is on.</span><a href="#top" data-jump>back to the door ↑</a></p></div>
+      </div>
+      <div class="ft__bottom">
+        <span>© 2026 DOPPIO — a concept. the street is pretend, the seats are comfy.</span>
+        <span class="ft-sign">concept, design &amp; code by <span class="sig">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/data.js?v=20261025-19"></script>
+  <script src="js/main.js?v=20261025-19"></script>
+  <script src="js/room.js?v=20261025-19"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <   ☕     *
+-->
+</html>
